@@ -12,6 +12,7 @@
     "ramda": "^0.23.0"
   },
   "devDependencies": {
+    "istanbul": "^0.4.5",
     "jasme": "^5.2.0",
     "standard": "^8.6.0"
   }

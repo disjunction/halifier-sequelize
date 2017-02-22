@@ -31,8 +31,33 @@ function extrasFromProps (x) {
   )
 }
 
+function getListMetaFromReq (req, options) {
+  options = options || {}
+  const listMeta = {
+    offset: 0,
+    query: req.query
+  }
+
+  listMeta.limit = options.autoLimit || 20
+  if (req.query) {
+    ['offset', 'limit'].forEach(field => {
+      if (req.query[field]) {
+        const parsed = parseInt(req.query[field])
+        if (parsed > 0) {
+          listMeta[field] = parsed
+        }
+      }
+    })
+    if (req.query.order) {
+      listMeta.order = req.query.order
+    }
+  }
+  return listMeta
+}
+
 module.exports = {
   extrasFromProps,
   extrasFromHyphened,
+  getListMetaFromReq,
   whereFromHyphened
 }
