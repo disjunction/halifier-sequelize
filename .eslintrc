@@ -1,0 +1,15 @@
+{
+  "extends": "standard",
+  "env": {
+    "node": true,
+    "es6": true
+  },
+  "plugins": [
+    "promise"
+  ],
+  "rules": {
+    "no-var": 2,
+    "no-console": [1, { allow: ["info", "error"] }]
+  }
+}
+  

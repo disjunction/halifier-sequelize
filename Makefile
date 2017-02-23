@@ -5,7 +5,7 @@ default: test
 test:
 	./node_modules/jasme/run.js
 lint:
-	./node_modules/standard/bin/cmd.js
+	./node_modules/eslint/bin/eslint.js src test
 
 coverage:
 	node_modules/istanbul/lib/cli.js cover \

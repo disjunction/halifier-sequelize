@@ -27,7 +27,7 @@ class AbstractEntityHalifier {
     if (!meta.query || !meta.totalCount) {
       throw new Error('default implementation requires _listMeta.query and _listMeta.totalCount')
     }
-    const query = Object.assign({}, meta.query)
+    const query = Object.assign({limit: meta.limit}, meta.query)
 
     if (meta.offset > 0) {
       query.offset = Math.max(0, meta.offset - meta.limit)
