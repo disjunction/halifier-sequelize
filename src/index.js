@@ -1,3 +1,4 @@
 module.exports = {
-  meta: require('./meta')
+  SequelizeDataProvider: require('./SequelizeDataProvider'),
+  SequelizeEntityHalifier: require('./SequelizeEntityHalifier')
 }
