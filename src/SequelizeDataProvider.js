@@ -27,7 +27,7 @@ class SequelizeDataProvider {
     return query
   }
 
-  runQuery (listMeta) {
+  runListQuery (listMeta) {
     const query = this.makeQuery(listMeta)
     let selected
     return this.opts.model.findAll(query)
@@ -48,6 +48,15 @@ class SequelizeDataProvider {
         })
         return [selected, newListMeta]
       })
+  }
+
+  findOneById (id) {
+    const fieldName = this.opts.idFieldName || 'id'
+    return this.opts.model.findOne({
+      where: {
+        [fieldName]: id
+      }
+    })
   }
 }
 

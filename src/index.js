@@ -1,4 +1,5 @@
 module.exports = {
   SequelizeDataProvider: require('./SequelizeDataProvider'),
-  SequelizeEntityHalifier: require('./SequelizeEntityHalifier')
+  SequelizeItemHalifier: require('./SequelizeItemHalifier'),
+  SequelizeHalController: require('./SequelizeHalController')
 }
