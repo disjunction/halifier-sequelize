@@ -50,7 +50,7 @@ class SequelizeDataProvider {
       })
   }
 
-  findOneById (id) {
+  findById (id) {
     const fieldName = this.opts.idFieldName || 'id'
     return this.opts.model.findOne({
       where: {
