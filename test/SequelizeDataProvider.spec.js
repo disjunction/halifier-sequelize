@@ -10,12 +10,12 @@ describe('SequelizeDataProvider', () => {
     const query = testProvider.makeQuery({
       limit: 5,
       offset: 0,
-      order: 'ok',
-      query: {ok: 4}
+      order: [{'ok': 'asc'}],
+      query: {qty: 4}
     })
-    expect(query.where.ok).toBe(4)
+    expect(query.where.qty).toBe(4)
     expect(query.limit).toBe(5)
     expect(query.offset).toBe(0)
-    expect(query.order).toEqual(['ok'])
+    expect(query.order).toEqual([['ok', 'ASC']])
   })
 })

@@ -21,7 +21,11 @@ class SequelizeDataProvider {
     }
 
     if (listMeta.order) {
-      query.order = Array.isArray(listMeta.order) ? listMeta.order : [listMeta.order]
+      query.order = listMeta.order.map(fieldOrder => {
+        const field = R.nth(0, R.keys(fieldOrder))
+        return [field, String(fieldOrder[field]).toUpperCase()]
+      })
+        .filter(R.nth(0))
     }
 
     return query
