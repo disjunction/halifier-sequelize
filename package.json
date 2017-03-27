@@ -1,6 +1,6 @@
 {
   "name": "halifier-sequelize",
-  "version": "0.0.2",
+  "version": "0.0.4",
   "description": "sequelize adapters for halifier library",
   "main": "src/index.js",
   "scripts": {
